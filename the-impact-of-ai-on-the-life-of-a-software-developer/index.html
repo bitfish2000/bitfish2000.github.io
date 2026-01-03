@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="https://bitfish.in/images/favicon.png" />
+<title>The impact of AI on the life of a Software Developer | Arsalan Zaidi&#39;s Blog</title>
+<meta name="title" content="The impact of AI on the life of a Software Developer" />
+<meta name="description" content="TLDR: AI/ML will be just another tool in the toolbox for developers to use. It is not going to fundamentally change the craft of developing software.
+Maybe I’m a bit late to the party with this short piece, but there’s been a lot of buzz about how the latest AI (actually ML [Machine Learning]) tools are going to replace programmers. All the end user will have to do is type in a couple of lines in plain English describing his problem and viola! ChatGPT/Copilot or whatever else will vomit out code that can immediately be used. No pesky (and expensive!) coders to deal with; no ponderous requirement gathering, testing or any other of that SDLC malarkey. Just ask and you shall receive." />
+<meta name="keywords" content="AI,Software Development," />
+
+
+<meta property="og:url" content="https://bitfish.in/the-impact-of-ai-on-the-life-of-a-software-developer/">
+  <meta property="og:site_name" content="Arsalan Zaidi&#39;s Blog">
+  <meta property="og:title" content="The impact of AI on the life of a Software Developer">
+  <meta property="og:description" content="TLDR: AI/ML will be just another tool in the toolbox for developers to use. It is not going to fundamentally change the craft of developing software.
+Maybe I’m a bit late to the party with this short piece, but there’s been a lot of buzz about how the latest AI (actually ML [Machine Learning]) tools are going to replace programmers. All the end user will have to do is type in a couple of lines in plain English describing his problem and viola! ChatGPT/Copilot or whatever else will vomit out code that can immediately be used. No pesky (and expensive!) coders to deal with; no ponderous requirement gathering, testing or any other of that SDLC malarkey. Just ask and you shall receive.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2023-08-07T12:00:00+00:00">
+    <meta property="article:modified_time" content="2023-08-07T12:00:00+00:00">
+    <meta property="article:tag" content="AI">
+    <meta property="article:tag" content="Software Development">
+    <meta property="og:image" content="https://bitfish.in/images/share.png">
+
+
+
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://bitfish.in/images/share.png">
+  <meta name="twitter:title" content="The impact of AI on the life of a Software Developer">
+  <meta name="twitter:description" content="TLDR: AI/ML will be just another tool in the toolbox for developers to use. It is not going to fundamentally change the craft of developing software.
+Maybe I’m a bit late to the party with this short piece, but there’s been a lot of buzz about how the latest AI (actually ML [Machine Learning]) tools are going to replace programmers. All the end user will have to do is type in a couple of lines in plain English describing his problem and viola! ChatGPT/Copilot or whatever else will vomit out code that can immediately be used. No pesky (and expensive!) coders to deal with; no ponderous requirement gathering, testing or any other of that SDLC malarkey. Just ask and you shall receive.">
+
+
+
+
+  <meta itemprop="name" content="The impact of AI on the life of a Software Developer">
+  <meta itemprop="description" content="TLDR: AI/ML will be just another tool in the toolbox for developers to use. It is not going to fundamentally change the craft of developing software.
+Maybe I’m a bit late to the party with this short piece, but there’s been a lot of buzz about how the latest AI (actually ML [Machine Learning]) tools are going to replace programmers. All the end user will have to do is type in a couple of lines in plain English describing his problem and viola! ChatGPT/Copilot or whatever else will vomit out code that can immediately be used. No pesky (and expensive!) coders to deal with; no ponderous requirement gathering, testing or any other of that SDLC malarkey. Just ask and you shall receive.">
+  <meta itemprop="datePublished" content="2023-08-07T12:00:00+00:00">
+  <meta itemprop="dateModified" content="2023-08-07T12:00:00+00:00">
+  <meta itemprop="wordCount" content="774">
+  <meta itemprop="image" content="https://bitfish.in/images/share.png">
+  <meta itemprop="keywords" content="AI,Software Development">
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  :root {
+    --width: 720px;
+    --font-main: Verdana, sans-serif;
+    --font-secondary: Verdana, sans-serif;
+    --font-scale: 1em;
+    --background-color: #fff;
+    --heading-color: #222;
+    --text-color: #444;
+    --link-color: #3273dc;
+    --visited-color: #8b6fcb;
+    --blockquote-color: #222;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background-color: #01242e;
+      --heading-color: #eee;
+      --text-color: #ddd;
+      --link-color: #8cc2dd;
+      --visited-color: #8b6fcb;
+      --blockquote-color: #ccc;
+    }
+  }
+
+  body {
+    font-family: var(--font-secondary);
+    font-size: var(--font-scale);
+    margin: auto;
+    padding: 20px;
+    max-width: var(--width);
+    text-align: left;
+    background-color: var(--background-color);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: var(--text-color);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-main);
+    color: var(--heading-color);
+  }
+
+  a {
+    color: var(--link-color);
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  nav a {
+    margin-right: 8px;
+  }
+
+  strong,
+  b {
+    color: var(--heading-color);
+  }
+
+  button {
+    margin: 0;
+    cursor: pointer;
+  }
+
+  time {
+    font-family: monospace;
+    font-style: normal;
+    font-size: 15px;
+  }
+
+  main {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  hr {
+    border: 0;
+    border-top: 1px dashed;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    font-family: monospace;
+    padding: 2px;
+    border-radius: 3px;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: var(--blockquote-color);
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding: 25px 0;
+    text-align: center;
+  }
+
+  .title:hover {
+    text-decoration: none;
+  }
+
+  .title h1 {
+    font-size: 1.5em;
+  }
+
+  .inline {
+    width: auto !important;
+  }
+
+  .highlight,
+  .code {
+    border-radius: 3px;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    overflow-x: auto;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  ul.blog-posts li {
+    display: flex;
+  }
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+  ul.blog-posts li a:visited {
+    color: var(--visited-color);
+  }
+
+</style>
+
+</head>
+
+<body>
+  <header><a href="/" class="title">
+  <h2>Arsalan Zaidi&#39;s Blog</h2>
+</a>
+<nav>
+<a href="/">Home</a>
+
+<a href="/blog/">Blog</a>
+
+<a href="/index.xml">RSS-feed</a>
+
+</nav>
+</header>
+  <main>
+
+<h1>The impact of AI on the life of a Software Developer</h1>
+<p>
+  <i>
+    <time datetime='2023-08-07'>
+      07 Aug, 2023
+    </time>
+  </i>
+</p>
+
+<content>
+  <p>TLDR: AI/ML will be just another tool in the toolbox for developers to use. It is not going to fundamentally change the craft of developing software.</p>
+<p>Maybe I’m a bit late to the party with this short piece, but there’s been a lot of buzz about how the latest AI (actually ML [Machine Learning]) tools are going to replace programmers. All the end user will have to do is type in a couple of lines in plain English describing his problem and viola! ChatGPT/Copilot or whatever else will vomit out code that can immediately be used. No pesky (and expensive!) coders to deal with; no ponderous requirement gathering, testing or any other of that SDLC malarkey. Just ask and you shall receive.</p>
+<p>Now anyone who’s been in the industry for any amount of time will know that we get a new bit of tech every 5-10 years which promises management that if they buy into it, it will let them get rid of their programmers. Whether it’s COBOL, 4th Generation Languages, RAD tools, UML, or Low/No code platforms, the promise is enticing. Programmers are expensive and anything which will reduce cost and headcount is a win.</p>
+<p>The problem is that programmers are expensive for a reason. Software development is not easy. It’s part engineering, part voodoo. Developers do more than just write code. In fact, writing code is a very small part of the process of developing an application. The larger part of the process is getting the end user to think about and articulate their requirements. Then those requirements need to be converted into code which is secure, maintainable, well testing and performant. The inevitable changes then need to be incorporated into the code base once the user has a look at the end product and decides he actually doesn’t want what he asked for and can you change the look and feel of the UI completely 😕.</p>
+<p>The current set of AI tools work remarkably (but not perfectly!) well at turning out code which is close to what you asked for, but how precise was your ask? Did you specify everything you needed and were looking for? The tools don’t really dig into what you’re asking of them. Like a lot of tooling holding out enticing promises, they work well enough for simple cases and maybe even for 60%-80% of some specific use cases, but inevitably fall apart when you try to stretch them to cover all of your requirements.</p>
+<p>For AI to be smart enough and empathetic enough to figure out what you actually mean when you’re trying to articulate your desires, you would need it to be actually intelligent; you’d need to achieve Artificial General Intelligence. Not even the most over enthusiastic AI prompter thinks that these tools are any close to that.</p>
+<p>So what do we really have here? Tools like Copilot and ChatGPT are fundamentally autocomplete on steroids. The system tries to guess the next best token (for a given value of ‘best’) while generating its output. It’s actually remarkable that the current state of the art is able to achieve what it does but how useful is this in real life for a coder?</p>
+<p>This kind of auto code complete may help reduce the amount of typing I end up doing, but if actual ‘coding’ is only 20% of what I do as a programmer, then even a 100% increase in productivity there doesn’t significantly increase my overall output. BTW, we already have tech which allows me to re-use the code created by other programmers; it’s called using libraries and frameworks. The code available there is not the hallucination prone regurgitations of a statistical token generating engine, but actual thoughtfully created (and tested!) code written by other programmers.</p>
+<p>So what is ML good for in the context of the SDLC? I can see these kind of tools being useful for generating documentation for existing code or creating a lot of the test cases required for unit testing. Maybe it can be used to throw up quick POCs or the basic scaffolding of an app. A lot of time can be saved if the basic boilerplating of an application can be generated automatically. None of this is earth shattering though. It’s all just incremental and a lot of whatever time is saved will go in actually validating the output of these tools for correctness and fitness for purpose.</p>
+<p>As Fred Brooks (of Mythical Man Month fame) once wrote, there is no such thing as a Silver Bullet. No one tool is going to magically increase developer productivity by an order of magnitude. Not AI and not anything else.</p>
+
+</content>
+
+
+
+<p>
+  
+  <a href="https://bitfish.in/blog/ai/">#AI</a>
+  
+  <a href="https://bitfish.in/blog/software-development/">#Software Development</a>
+  
+</p>
+
+  </main>
+  <footer>Made with <a href="https://github.com/janraasch/hugo-bearblog/">Hugo ʕ•ᴥ•ʔ Bear</a>
+</footer>
+
+  
+</body>
+
+</html>

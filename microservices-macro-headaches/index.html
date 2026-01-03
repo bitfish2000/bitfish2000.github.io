@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="https://bitfish.in/images/favicon.png" />
+<title>Microservices == Macro headaches | Arsalan Zaidi&#39;s Blog</title>
+<meta name="title" content="Microservices == Macro headaches" />
+<meta name="description" content="TLDR: Unless you really need it and know why you need it, it’s best to stick to a monolithic architecture for your application.
+For the purpose of this post, microservices can be defined as loosely coupled services which communicate with each other via some kind of messaging system. Monoliths on the other hand are big old lumps of code where different functionality directly interacts with each other via method calls or at most through the database." />
+<meta name="keywords" content="Software Development," />
+
+
+<meta property="og:url" content="https://bitfish.in/microservices-macro-headaches/">
+  <meta property="og:site_name" content="Arsalan Zaidi&#39;s Blog">
+  <meta property="og:title" content="Microservices == Macro headaches">
+  <meta property="og:description" content="TLDR: Unless you really need it and know why you need it, it’s best to stick to a monolithic architecture for your application.
+For the purpose of this post, microservices can be defined as loosely coupled services which communicate with each other via some kind of messaging system. Monoliths on the other hand are big old lumps of code where different functionality directly interacts with each other via method calls or at most through the database.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2023-08-11T12:00:00+00:00">
+    <meta property="article:modified_time" content="2023-08-11T12:00:00+00:00">
+    <meta property="article:tag" content="Software Development">
+    <meta property="og:image" content="https://bitfish.in/images/share.png">
+
+
+
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://bitfish.in/images/share.png">
+  <meta name="twitter:title" content="Microservices == Macro headaches">
+  <meta name="twitter:description" content="TLDR: Unless you really need it and know why you need it, it’s best to stick to a monolithic architecture for your application.
+For the purpose of this post, microservices can be defined as loosely coupled services which communicate with each other via some kind of messaging system. Monoliths on the other hand are big old lumps of code where different functionality directly interacts with each other via method calls or at most through the database.">
+
+
+
+
+  <meta itemprop="name" content="Microservices == Macro headaches">
+  <meta itemprop="description" content="TLDR: Unless you really need it and know why you need it, it’s best to stick to a monolithic architecture for your application.
+For the purpose of this post, microservices can be defined as loosely coupled services which communicate with each other via some kind of messaging system. Monoliths on the other hand are big old lumps of code where different functionality directly interacts with each other via method calls or at most through the database.">
+  <meta itemprop="datePublished" content="2023-08-11T12:00:00+00:00">
+  <meta itemprop="dateModified" content="2023-08-11T12:00:00+00:00">
+  <meta itemprop="wordCount" content="708">
+  <meta itemprop="image" content="https://bitfish.in/images/share.png">
+  <meta itemprop="keywords" content="Software Development">
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  :root {
+    --width: 720px;
+    --font-main: Verdana, sans-serif;
+    --font-secondary: Verdana, sans-serif;
+    --font-scale: 1em;
+    --background-color: #fff;
+    --heading-color: #222;
+    --text-color: #444;
+    --link-color: #3273dc;
+    --visited-color: #8b6fcb;
+    --blockquote-color: #222;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background-color: #01242e;
+      --heading-color: #eee;
+      --text-color: #ddd;
+      --link-color: #8cc2dd;
+      --visited-color: #8b6fcb;
+      --blockquote-color: #ccc;
+    }
+  }
+
+  body {
+    font-family: var(--font-secondary);
+    font-size: var(--font-scale);
+    margin: auto;
+    padding: 20px;
+    max-width: var(--width);
+    text-align: left;
+    background-color: var(--background-color);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: var(--text-color);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-main);
+    color: var(--heading-color);
+  }
+
+  a {
+    color: var(--link-color);
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  nav a {
+    margin-right: 8px;
+  }
+
+  strong,
+  b {
+    color: var(--heading-color);
+  }
+
+  button {
+    margin: 0;
+    cursor: pointer;
+  }
+
+  time {
+    font-family: monospace;
+    font-style: normal;
+    font-size: 15px;
+  }
+
+  main {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  hr {
+    border: 0;
+    border-top: 1px dashed;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    font-family: monospace;
+    padding: 2px;
+    border-radius: 3px;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: var(--blockquote-color);
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding: 25px 0;
+    text-align: center;
+  }
+
+  .title:hover {
+    text-decoration: none;
+  }
+
+  .title h1 {
+    font-size: 1.5em;
+  }
+
+  .inline {
+    width: auto !important;
+  }
+
+  .highlight,
+  .code {
+    border-radius: 3px;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    overflow-x: auto;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  ul.blog-posts li {
+    display: flex;
+  }
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+  ul.blog-posts li a:visited {
+    color: var(--visited-color);
+  }
+
+</style>
+
+</head>
+
+<body>
+  <header><a href="/" class="title">
+  <h2>Arsalan Zaidi&#39;s Blog</h2>
+</a>
+<nav>
+<a href="/">Home</a>
+
+<a href="/blog/">Blog</a>
+
+<a href="/index.xml">RSS-feed</a>
+
+</nav>
+</header>
+  <main>
+
+<h1>Microservices == Macro headaches</h1>
+<p>
+  <i>
+    <time datetime='2023-08-11'>
+      11 Aug, 2023
+    </time>
+  </i>
+</p>
+
+<content>
+  <p>TLDR: Unless you really need it and know why you need it, it’s best to stick to a monolithic architecture for your application.</p>
+<p>For the purpose of this post, microservices can be defined as loosely coupled services which communicate with each other via some kind of messaging system. Monoliths on the other hand are big old lumps of code where different functionality directly interacts with each other via method calls or at most through the database.</p>
+<p>The potential advantages of using microservices are that the application functionality can be split up along logical boundaries and potentially developed by completely different teams. Communication is via clearly defined interfaces, so in an ideal world each team can stay ignorant of the internal functionality of each other’s services and interact only through the exposed API. Services can also be scaled completely independently of each other which provides further flexibility.</p>
+<p>It all sounds great in theory and I also jumped on the hype train a few years ago to develop an application using a microservice based architecture. I’m also currently maintaining services which are part of such a system. Unfortunately, like all things in tech there’s never a silver bullet and that holds true for microservices as well. Every decision has its advantages and disadvantages and basing your application architecture around microservices has both benefits and drawbacks.</p>
+<p>The key point to keep in mind is that you’re not running Twitter, Facebook or Netflix and if you are, what are you doing reading this post? If you’re running a global scale application with a billion plus users then close this tab, this post is not for you. On the other hand, if you’re like most people handling an application with a much more modest user base then read on.</p>
+<p>The fundamental problem with microservices is that they are a form of premature optimization. As with all forms of premature optimization, you’re probably not going to need it; or to be more precise, you’re not going to need it in the form you anticipate. Sure, you get the flexibility of independently scaling different parts of the application, but at what cost?</p>
+<p>You’re going to spend more (much more!) time maintaining and debugging your app than you are going to spend developing it. Orders of magnitude more. Development doesn’t become any easier with microservices but debugging becomes a whole lot harder. Just getting some sort of distributed logging to work (you do want to track a user request across services right?) is a major task in itself. Trying to track down a bug across multiple systems each with their own databases is a special kind of hell. And the setup! You don’t have just one app or docker image to finagle, you’ve got to have a whole mini universe of them spun up on your machine just to get a single complete user flow to work. Not only do you not get to view the various services as opaque abstractions, now you need to dig into each to see where the problem might lie.</p>
+<p>The problems become even more acute in production. Having the various components communicating via message queues sounds nice in theory, but in practice it makes fixing a running system on the fly much more dangerous. If there’s one database with a complete view of the data in its various states contained within it, then fixing it is straight-forward. If you need to reconstruct and push older messages through the queue to replay a transaction, you’ll be knee deep in doo-doo in no time.</p>
+<p>So what’s to be done? Should we abandon the promised land of microservice nirvana and content ourselves with our home-grown balls of mud? Not exactly. The best way forward seems to be to first build your application as a monolith. Then once you understand your requirements intimately and have experience dealing with the application in production, you can distribute your code horizontally for performance or break it up to reduce coupling. In this way, you’ll be targeting those parts of the application which are most performance intensive and will benefit the most from optimization. At the same time, you’ll retain the quick turn around and lower cognitive load of dealing with a monolith for as long as possible.</p>
+
+</content>
+
+
+
+<p>
+  
+  <a href="https://bitfish.in/blog/software-development/">#Software Development</a>
+  
+</p>
+
+  </main>
+  <footer>Made with <a href="https://github.com/janraasch/hugo-bearblog/">Hugo ʕ•ᴥ•ʔ Bear</a>
+</footer>
+
+  
+</body>
+
+</html>

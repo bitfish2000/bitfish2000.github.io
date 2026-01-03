@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AI on Arsalan Zaidi&#39;s Blog</title>
+    <link>https://bitfish.in/blog/ai/</link>
+    <description>Recent content in AI on Arsalan Zaidi&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <copyright>Copyright © 2026, Arsalan Zaid.</copyright>
+    <lastBuildDate>Tue, 08 Aug 2023 12:00:00 +0000</lastBuildDate>
+    <atom:link href="https://bitfish.in/blog/ai/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ChatGPT took our jerbs!</title>
+      <link>https://bitfish.in/chatgpt-took-our-jerbs/</link>
+      <pubDate>Tue, 08 Aug 2023 12:00:00 +0000</pubDate>
+      <guid>https://bitfish.in/chatgpt-took-our-jerbs/</guid>
+      <description>&lt;p&gt;TLDR: If AI systems achieve Artificial General Intelligence, then losing our jobs will be the least of our worries. We’re a long way away from bowing down before our robot overlords.&lt;/p&gt;&#xA;&lt;p&gt;There’s been a lot of panic around AI recently. Not so much that we’ll be getting blown away by Arnold Schwarzenegger clones but rather that we’ll be replaced at our desks by HAL 9000. It seems that the take over of middle level white collar jobs by AI software is imminent and we’ll be seeing white collar redundancies much in the way that many blue collar jobs were replaced by mechanical automation. Before we go too far down the headless chicken panic route, it makes sense to try to understand what the current iteration of AI or rather ML (Machine Learning) is and what its capabilities might be.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>The impact of AI on the life of a Software Developer</title>
+      <link>https://bitfish.in/the-impact-of-ai-on-the-life-of-a-software-developer/</link>
+      <pubDate>Mon, 07 Aug 2023 12:00:00 +0000</pubDate>
+      <guid>https://bitfish.in/the-impact-of-ai-on-the-life-of-a-software-developer/</guid>
+      <description>&lt;p&gt;TLDR: AI/ML will be just another tool in the toolbox for developers to use. It is not going to fundamentally change the craft of developing software.&lt;/p&gt;&#xA;&lt;p&gt;Maybe I’m a bit late to the party with this short piece, but there’s been a lot of buzz about how the latest AI (actually ML [Machine Learning]) tools are going to replace programmers. All the end user will have to do is type in a couple of lines in plain English describing his problem and viola! ChatGPT/Copilot or whatever else will vomit out code that can immediately be used. No pesky (and expensive!) coders to deal with; no ponderous requirement gathering, testing or any other of that SDLC malarkey. Just ask and you shall receive.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
