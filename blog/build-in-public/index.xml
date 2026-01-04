@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Build in Public on Arsalan Zaidi&#39;s Blog</title>
+    <link>https://bitfish.in/blog/build-in-public/</link>
+    <description>Recent content in Build in Public on Arsalan Zaidi&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <copyright>Copyright © 2026, Arsalan Zaid.</copyright>
+    <lastBuildDate>Sun, 04 Jan 2026 10:00:00 +0000</lastBuildDate>
+    <atom:link href="https://bitfish.in/blog/build-in-public/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Setting up a static website with Hugo and Github Pages</title>
+      <link>https://bitfish.in/setting-up-a-static-website-with-hugo-and-github-pages/</link>
+      <pubDate>Sun, 04 Jan 2026 10:00:00 +0000</pubDate>
+      <guid>https://bitfish.in/setting-up-a-static-website-with-hugo-and-github-pages/</guid>
+      <description>&lt;p&gt;&lt;em&gt;&lt;strong&gt;TLDR&lt;/strong&gt;: You can setup a website for yourself for the cost of a domain name and some time using a static site generator like Hugo and free hosting on Github Pages.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;So I just did this for myself after procrastinating for months. The steps can be a bit confusing at first, so I&amp;rsquo;ve decided to pull together a short tutorial in case anyone else wants to do something similar and also as a reminder for myself in the future in case I need to do this again.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

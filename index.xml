@@ -7,8 +7,15 @@
     <generator>Hugo</generator>
     <language>en-US</language>
     <copyright>Copyright © 2026, Arsalan Zaid.</copyright>
-    <lastBuildDate>Fri, 18 Aug 2023 12:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 04 Jan 2026 10:00:00 +0000</lastBuildDate>
     <atom:link href="https://bitfish.in/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Setting up a static website with Hugo and Github Pages</title>
+      <link>https://bitfish.in/setting-up-a-static-website-with-hugo-and-github-pages/</link>
+      <pubDate>Sun, 04 Jan 2026 10:00:00 +0000</pubDate>
+      <guid>https://bitfish.in/setting-up-a-static-website-with-hugo-and-github-pages/</guid>
+      <description>&lt;p&gt;&lt;em&gt;&lt;strong&gt;TLDR&lt;/strong&gt;: You can setup a website for yourself for the cost of a domain name and some time using a static site generator like Hugo and free hosting on Github Pages.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;So I just did this for myself after procrastinating for months. The steps can be a bit confusing at first, so I&amp;rsquo;ve decided to pull together a short tutorial in case anyone else wants to do something similar and also as a reminder for myself in the future in case I need to do this again.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Leaky abstractions</title>
       <link>https://bitfish.in/leaky-abstractions/</link>
@@ -36,6 +43,13 @@
       <pubDate>Mon, 07 Aug 2023 12:00:00 +0000</pubDate>
       <guid>https://bitfish.in/the-impact-of-ai-on-the-life-of-a-software-developer/</guid>
       <description>&lt;p&gt;TLDR: AI/ML will be just another tool in the toolbox for developers to use. It is not going to fundamentally change the craft of developing software.&lt;/p&gt;&#xA;&lt;p&gt;Maybe I’m a bit late to the party with this short piece, but there’s been a lot of buzz about how the latest AI (actually ML [Machine Learning]) tools are going to replace programmers. All the end user will have to do is type in a couple of lines in plain English describing his problem and viola! ChatGPT/Copilot or whatever else will vomit out code that can immediately be used. No pesky (and expensive!) coders to deal with; no ponderous requirement gathering, testing or any other of that SDLC malarkey. Just ask and you shall receive.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Arsalan Zaidi&#39;s Blog - azaidi.blogspot.com</title>
+      <link>https://bitfish.in/arsalan-zaidis-blog-azaidi.blogspot.com/</link>
+      <pubDate>Sun, 15 Jun 2008 12:00:00 +0000</pubDate>
+      <guid>https://bitfish.in/arsalan-zaidis-blog-azaidi.blogspot.com/</guid>
+      <description>&lt;p&gt;The first blog I ever set up was on blogspot.com. You can check out my ramblings there if you are extremely curious.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://azaidi.blogspot.com/&#34;&gt;↠ Arsalan Zaidi&amp;rsquo;s Blog ↞&lt;/a&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
