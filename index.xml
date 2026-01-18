@@ -7,8 +7,15 @@
     <generator>Hugo</generator>
     <language>en-US</language>
     <copyright>Copyright © 2026, Arsalan Zaid.</copyright>
-    <lastBuildDate>Sun, 04 Jan 2026 10:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 18 Jan 2026 12:00:00 +0000</lastBuildDate>
     <atom:link href="https://bitfish.in/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Off the shelf software versus custom-built applications</title>
+      <link>https://bitfish.in/off-the-shelf-software-versus-custom-built-applications/</link>
+      <pubDate>Sun, 18 Jan 2026 12:00:00 +0000</pubDate>
+      <guid>https://bitfish.in/off-the-shelf-software-versus-custom-built-applications/</guid>
+      <description>&lt;p&gt;&lt;em&gt;&lt;strong&gt;TLDR:&lt;/strong&gt; Go with an off the shelf application if you can live with it without needing to modify it with custom code. If you know you&amp;rsquo;re going to have to make significant code changes, bite the bullet and create a custom application.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;Lets kick things off with some definitions:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Off-the-shelf software&lt;/strong&gt;: Software that’s pre-built, ready to use, and designed for broad use cases across industries. Examples of this might include Salesforce, Peoplesoft, SAP, or even Excel.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Setting up a static website with Hugo and Github Pages</title>
       <link>https://bitfish.in/setting-up-a-static-website-with-hugo-and-github-pages/</link>

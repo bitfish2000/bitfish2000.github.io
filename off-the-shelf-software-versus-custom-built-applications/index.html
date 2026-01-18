@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="https://bitfish.in/images/favicon.png" />
+<title>Off the shelf software versus custom-built applications | Arsalan Zaidi&#39;s Blog</title>
+<meta name="title" content="Off the shelf software versus custom-built applications" />
+<meta name="description" content="TLDR: Go with an off the shelf application if you can live with it without needing to modify it with custom code. If you know you&rsquo;re going to have to make significant code changes, bite the bullet and create a custom application.
+
+Introduction
+Lets kick things off with some definitions:
+
+
+Off-the-shelf software: Software that’s pre-built, ready to use, and designed for broad use cases across industries. Examples of this might include Salesforce, Peoplesoft, SAP, or even Excel." />
+<meta name="keywords" content="software development," />
+
+
+<meta property="og:url" content="https://bitfish.in/off-the-shelf-software-versus-custom-built-applications/">
+  <meta property="og:site_name" content="Arsalan Zaidi&#39;s Blog">
+  <meta property="og:title" content="Off the shelf software versus custom-built applications">
+  <meta property="og:description" content="TLDR: Go with an off the shelf application if you can live with it without needing to modify it with custom code. If you know you’re going to have to make significant code changes, bite the bullet and create a custom application.
+Introduction Lets kick things off with some definitions:
+Off-the-shelf software: Software that’s pre-built, ready to use, and designed for broad use cases across industries. Examples of this might include Salesforce, Peoplesoft, SAP, or even Excel.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2026-01-18T12:00:00+00:00">
+    <meta property="article:modified_time" content="2026-01-18T12:00:00+00:00">
+    <meta property="article:tag" content="Software Development">
+    <meta property="og:image" content="https://bitfish.in/images/share.png">
+
+
+
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://bitfish.in/images/share.png">
+  <meta name="twitter:title" content="Off the shelf software versus custom-built applications">
+  <meta name="twitter:description" content="TLDR: Go with an off the shelf application if you can live with it without needing to modify it with custom code. If you know you’re going to have to make significant code changes, bite the bullet and create a custom application.
+Introduction Lets kick things off with some definitions:
+Off-the-shelf software: Software that’s pre-built, ready to use, and designed for broad use cases across industries. Examples of this might include Salesforce, Peoplesoft, SAP, or even Excel.">
+
+
+
+
+  <meta itemprop="name" content="Off the shelf software versus custom-built applications">
+  <meta itemprop="description" content="TLDR: Go with an off the shelf application if you can live with it without needing to modify it with custom code. If you know you’re going to have to make significant code changes, bite the bullet and create a custom application.
+Introduction Lets kick things off with some definitions:
+Off-the-shelf software: Software that’s pre-built, ready to use, and designed for broad use cases across industries. Examples of this might include Salesforce, Peoplesoft, SAP, or even Excel.">
+  <meta itemprop="datePublished" content="2026-01-18T12:00:00+00:00">
+  <meta itemprop="dateModified" content="2026-01-18T12:00:00+00:00">
+  <meta itemprop="wordCount" content="1095">
+  <meta itemprop="image" content="https://bitfish.in/images/share.png">
+  <meta itemprop="keywords" content="Software Development">
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  :root {
+    --width: 720px;
+    --font-main: Verdana, sans-serif;
+    --font-secondary: Verdana, sans-serif;
+    --font-scale: 1em;
+    --background-color: #fff;
+    --heading-color: #222;
+    --text-color: #444;
+    --link-color: #3273dc;
+    --visited-color: #8b6fcb;
+    --blockquote-color: #222;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background-color: #01242e;
+      --heading-color: #eee;
+      --text-color: #ddd;
+      --link-color: #8cc2dd;
+      --visited-color: #8b6fcb;
+      --blockquote-color: #ccc;
+    }
+  }
+
+  body {
+    font-family: var(--font-secondary);
+    font-size: var(--font-scale);
+    margin: auto;
+    padding: 20px;
+    max-width: var(--width);
+    text-align: left;
+    background-color: var(--background-color);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: var(--text-color);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-main);
+    color: var(--heading-color);
+  }
+
+  a {
+    color: var(--link-color);
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  nav a {
+    margin-right: 8px;
+  }
+
+  strong,
+  b {
+    color: var(--heading-color);
+  }
+
+  button {
+    margin: 0;
+    cursor: pointer;
+  }
+
+  time {
+    font-family: monospace;
+    font-style: normal;
+    font-size: 15px;
+  }
+
+  main {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  hr {
+    border: 0;
+    border-top: 1px dashed;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    font-family: monospace;
+    padding: 2px;
+    border-radius: 3px;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: var(--blockquote-color);
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding: 25px 0;
+    text-align: center;
+  }
+
+  .title:hover {
+    text-decoration: none;
+  }
+
+  .title h1 {
+    font-size: 1.5em;
+  }
+
+  .inline {
+    width: auto !important;
+  }
+
+  .highlight,
+  .code {
+    border-radius: 3px;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    overflow-x: auto;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  ul.blog-posts li {
+    display: flex;
+  }
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+  ul.blog-posts li a:visited {
+    color: var(--visited-color);
+  }
+
+</style>
+
+</head>
+
+<body>
+  <header><a href="/" class="title">
+  <h2>Arsalan Zaidi&#39;s Blog</h2>
+</a>
+<nav>
+<a href="/">Home</a>
+
+<a href="/blog/">Blog</a>
+
+<a href="/index.xml">🛜</a>
+
+</nav>
+</header>
+  <main>
+
+<h1>Off the shelf software versus custom-built applications</h1>
+<p>
+  <i>
+    <time datetime='2026-01-18'>
+      18 Jan, 2026
+    </time>
+  </i>
+</p>
+
+<content>
+  <p><em><strong>TLDR:</strong> Go with an off the shelf application if you can live with it without needing to modify it with custom code. If you know you&rsquo;re going to have to make significant code changes, bite the bullet and create a custom application.</em></p>
+<hr>
+<h2 id="introduction">Introduction</h2>
+<p>Lets kick things off with some definitions:</p>
+<ul>
+<li>
+<p><strong>Off-the-shelf software</strong>: Software that’s pre-built, ready to use, and designed for broad use cases across industries. Examples of this might include Salesforce, Peoplesoft, SAP, or even Excel.</p>
+</li>
+<li>
+<p><strong>Custom applications</strong>: Tailor-made programs built specifically for your organization. They’re made to fit your specific workflows, goals, and aim to meet your particular objectives.</p>
+</li>
+</ul>
+<h3 id="ots-software">OTS Software</h3>
+<p>With off-the-shelf software the main advantages that you’re getting are faster deployment times and lower upfront costs. The software comes in as a pre-built package and you just need to drop it in and go. Another advantage is that you get access to a wealth of pre-existing information online as well as pre-trained and experienced consultants who are well versed in that ecosystem. This makes it easy to customize the application to meet your needs.</p>
+<p>The main trade-off is that while usually available, customization is limited. You’ll need to bend to fit pre-existing workflows, not the other way around. There are usually far too many bells and whistles, leading to  feature overload and you suffer from vendor lock-in. There might also be possible compliance gaps if the software is not specifically targeted at your business niche.</p>
+<h3 id="custom-applications">Custom Applications</h3>
+<p>On the other hand, with a custom built application, you get something which is tailored to fit you and your organization&rsquo;s specific needs. So no need to shake up the entire company and re-train a lot of folks. You can also use it to create a competitive advantage or a moat around your business as you can add unique capabilities that your competitors can’t buy off a shelf.</p>
+<p>On the flip side, this approach comes with a much higher initial cost and it can take a lot more time to get up and running. There’s also an ongoing maintenance overhead since you own the bugs, the servers, and all the associated headaches which come with running the application yourself.</p>
+<h2 id="so-what-should-you-go-for">So what should you go for?</h2>
+<p>If you can live within the constraints of using something that’s off the shelf; it is a no-brainer — just do it. It’ll be a lot faster, cheaper, and come with much lower risk. This is especially true if you are a smaller organization and you can mould yourself to fit around the constraints of the application. Avoid customization as much as possible. When I say customization, I mean adding custom code on top of the application. If the application supports native workflows or other ways to setup the application to fit your needs, that should be fine.</p>
+<p>However, If you are too large to be quite so flexible and you need to make the software fit you rather than the other way around, then just bite the bullet and go down the custom route. Avoid the mirage of those potentially lower initial costs. The overall cost will end up being much higher in the medium to long term.</p>
+<h2 id="why-not-go-with-something-in-the-middle">Why not go with something in the middle?</h2>
+<p>It’s a trap. Instead of getting the best of both worlds, you end up with the worst of both of them.</p>
+<p>For one, you’re locked into the vendor’s upgrade cycle. This is especially true if you’re on their cloud environment if they have that option. Now you can’t control how or when new features come in and old ones get deprecated. As they go down their development roadmap, chances are your custom code is going to break unless you update it to match.</p>
+<p>Secondly, you now have to hire product specialists who are much more expensive than general programmers, which is going to bump up your costs. Hiring generalists and training them up might also not work out since many coders may not want to work within the guts of a specific off the shelf app. You’re going to have to look for people who are comfortable going down that career specialization path, which isn’t for everyone.</p>
+<p>Furthermore, your customizations are limited by the base software and the design decisions taken by the vendor. You&rsquo;ll have to live with the decisions they’ve taken for their tech stack, overall architecture, scaling strategies and so on. Those decisions were not taken with your specific needs in mind, so the chances of them matching them are slim.</p>
+<p>Related to the previous point, you can’t refactor the core application code to fix issues or make it work better for you. I mean you can in most cases, it’s just that it’s going to completely break the upgrade path for you. So you’re stuck with whatever bugs and inefficiencies that are baked in, even when you can fix them yourself.</p>
+<h2 id="lessons-from-the-trenches">Lessons from the trenches</h2>
+<p>This isn’t something theoretical. I’m working with two such projects right now and we’ve got:</p>
+<ul>
+<li>High-priced consultants who are sucking us dry.</li>
+<li>An internal team we’re trying to train up, but people leave soon after they get some experience in, because now they’re the high priced specialist and they can get a much higher salary elsewhere.</li>
+<li>Strange intermittent performance issues we can’t trace because we’re running on a shared cloud environment and we don’t have complete admin access to the entire cloud setup.</li>
+<li>No easy access to all the logs in the way we need because of certain imposed space limitations.</li>
+</ul>
+<p>And even after spending some five years building all this up, we’re still adding features to these applications.</p>
+<h2 id="the-bottom-line">The Bottom Line</h2>
+<p>We could’ve built something better from the ground up in the same amount of time we’ve spent so far and probably for less money. That custom solution would be completely under our control and we would be able to mould it to our needs without having to spend half our time fighting the base system.</p>
+<p>So the key takeaway here is, go with an off the shelf application if you can live with it without needing to modify it with custom code. And if you must customize it — do it around the platform, not on top of it. Use their APIs, REST endpoints, file load points, even direct DB access — whatever you can get away with. Build small ETLs to push and pull data. Use the built-in configuration tools — like workflows or business rules — not custom code.</p>
+<p>Stay loosely coupled with the application. That way, your upgrade path stays cleaner and you’ll largely avoid breaking your customizations.</p>
+
+</content>
+
+
+
+<p>
+  
+  <a href="https://bitfish.in/blog/software-development/">#Software Development</a>
+  
+</p>
+
+  </main>
+  <footer>Made with <a href="https://github.com/janraasch/hugo-bearblog/">Hugo ʕ•ᴥ•ʔ Bear</a>
+</footer>
+
+  
+</body>
+
+</html>
