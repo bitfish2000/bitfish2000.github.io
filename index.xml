@@ -2,60 +2,67 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Home on Arsalan Zaidi&#39;s Blog</title>
-    <link>https://bitfish.in/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content in Home on Arsalan Zaidi&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en-US</language>
     <copyright>Copyright © 2026, Arsalan Zaid.</copyright>
-    <lastBuildDate>Sun, 18 Jan 2026 12:00:00 +0000</lastBuildDate>
-    <atom:link href="https://bitfish.in/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 17 May 2026 12:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Working in a Profit Centre versus a Cost Centre</title>
+      <link>http://localhost:1313/working-in-a-profit-centre-versus-a-cost-centre/</link>
+      <pubDate>Sun, 17 May 2026 12:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/working-in-a-profit-centre-versus-a-cost-centre/</guid>
+      <description>&lt;p&gt;&lt;em&gt;&lt;strong&gt;TL;DR:&lt;/strong&gt; Working in a cost centre like a GCC (Global Capability Centre) or corporate backoffice can be more relaxed but if you want to make an impact, then working where software development is at the front-line is where it&amp;rsquo;s at&lt;/em&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;As an IT professional, you need to ask yourself a very fundamental question. Do I want to be part of the profit engine of an organization and be involved with the team which is leading it forwards, or do I want to prioritize personal stability and resign myself to being considered just a necessary cost on the balance sheet?&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Off the shelf software versus custom-built applications</title>
-      <link>https://bitfish.in/off-the-shelf-software-versus-custom-built-applications/</link>
+      <link>http://localhost:1313/off-the-shelf-software-versus-custom-built-applications/</link>
       <pubDate>Sun, 18 Jan 2026 12:00:00 +0000</pubDate>
-      <guid>https://bitfish.in/off-the-shelf-software-versus-custom-built-applications/</guid>
+      <guid>http://localhost:1313/off-the-shelf-software-versus-custom-built-applications/</guid>
       <description>&lt;p&gt;&lt;em&gt;&lt;strong&gt;TLDR:&lt;/strong&gt; Go with an off the shelf application if you can live with it without needing to modify it with custom code. If you know you&amp;rsquo;re going to have to make significant code changes, bite the bullet and create a custom application.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;Lets kick things off with some definitions:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Off-the-shelf software&lt;/strong&gt;: Software that’s pre-built, ready to use, and designed for broad use cases across industries. Examples of this might include Salesforce, Peoplesoft, SAP, or even Excel.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Setting up a static website with Hugo and Github Pages</title>
-      <link>https://bitfish.in/setting-up-a-static-website-with-hugo-and-github-pages/</link>
+      <link>http://localhost:1313/setting-up-a-static-website-with-hugo-and-github-pages/</link>
       <pubDate>Sun, 04 Jan 2026 10:00:00 +0000</pubDate>
-      <guid>https://bitfish.in/setting-up-a-static-website-with-hugo-and-github-pages/</guid>
+      <guid>http://localhost:1313/setting-up-a-static-website-with-hugo-and-github-pages/</guid>
       <description>&lt;p&gt;&lt;em&gt;&lt;strong&gt;TLDR&lt;/strong&gt;: You can setup a website for yourself for the cost of a domain name and some time using a static site generator like Hugo and free hosting on Github Pages.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;So I just did this for myself after procrastinating for months. The steps can be a bit confusing at first, so I&amp;rsquo;ve decided to pull together a short tutorial in case anyone else wants to do something similar and also as a reminder for myself in the future in case I need to do this again.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Leaky abstractions</title>
-      <link>https://bitfish.in/leaky-abstractions/</link>
+      <link>http://localhost:1313/leaky-abstractions/</link>
       <pubDate>Fri, 18 Aug 2023 12:00:00 +0000</pubDate>
-      <guid>https://bitfish.in/leaky-abstractions/</guid>
+      <guid>http://localhost:1313/leaky-abstractions/</guid>
       <description>&lt;p&gt;TLDR: Abstractions are critical for reducing cognitive load, but you still need to know what’s going on under the hood.&lt;/p&gt;&#xA;&lt;h3 id=&#34;the-faulty-plumbing-behind-leaky-abstractions&#34;&gt;The faulty plumbing behind leaky abstractions&lt;/h3&gt;&#xA;&lt;p&gt;Abstractions are critical for a software developer. There’s only so much complexity a human head can hold and the closer you are to the hardware, perversely the less you can do with it. If you’re forced to code right up against the silicon writing machine code, you’ll spend all your time and mental energy just getting simple input/output to work. All of the history of development has been about using the advantages of Moore’s law to climb up the abstraction ladder. We hide the details of how a sub-system or functionality works under a library, framework or language feature so we can ignore the specifics. We step further away from the guts of the system and climb higher up the ladder in order to get a wider view of the landscape. We try to treat functionality as opaque Lego blocks and the bigger the blocks we snap together, the bigger the structures we can build.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Microservices == Macro headaches</title>
-      <link>https://bitfish.in/microservices-macro-headaches/</link>
+      <link>http://localhost:1313/microservices-macro-headaches/</link>
       <pubDate>Fri, 11 Aug 2023 12:00:00 +0000</pubDate>
-      <guid>https://bitfish.in/microservices-macro-headaches/</guid>
+      <guid>http://localhost:1313/microservices-macro-headaches/</guid>
       <description>&lt;p&gt;TLDR: Unless you really need it and know why you need it, it’s best to stick to a monolithic architecture for your application.&lt;/p&gt;&#xA;&lt;p&gt;For the purpose of this post, microservices can be defined as loosely coupled services which communicate with each other via some kind of messaging system. Monoliths on the other hand are big old lumps of code where different functionality directly interacts with each other via method calls or at most through the database.&lt;/p&gt;</description>
     </item>
     <item>
       <title>ChatGPT took our jerbs!</title>
-      <link>https://bitfish.in/chatgpt-took-our-jerbs/</link>
+      <link>http://localhost:1313/chatgpt-took-our-jerbs/</link>
       <pubDate>Tue, 08 Aug 2023 12:00:00 +0000</pubDate>
-      <guid>https://bitfish.in/chatgpt-took-our-jerbs/</guid>
+      <guid>http://localhost:1313/chatgpt-took-our-jerbs/</guid>
       <description>&lt;p&gt;TLDR: If AI systems achieve Artificial General Intelligence, then losing our jobs will be the least of our worries. We’re a long way away from bowing down before our robot overlords.&lt;/p&gt;&#xA;&lt;p&gt;There’s been a lot of panic around AI recently. Not so much that we’ll be getting blown away by Arnold Schwarzenegger clones but rather that we’ll be replaced at our desks by HAL 9000. It seems that the take over of middle level white collar jobs by AI software is imminent and we’ll be seeing white collar redundancies much in the way that many blue collar jobs were replaced by mechanical automation. Before we go too far down the headless chicken panic route, it makes sense to try to understand what the current iteration of AI or rather ML (Machine Learning) is and what its capabilities might be.&lt;/p&gt;</description>
     </item>
     <item>
       <title>The impact of AI on the life of a Software Developer</title>
-      <link>https://bitfish.in/the-impact-of-ai-on-the-life-of-a-software-developer/</link>
+      <link>http://localhost:1313/the-impact-of-ai-on-the-life-of-a-software-developer/</link>
       <pubDate>Mon, 07 Aug 2023 12:00:00 +0000</pubDate>
-      <guid>https://bitfish.in/the-impact-of-ai-on-the-life-of-a-software-developer/</guid>
+      <guid>http://localhost:1313/the-impact-of-ai-on-the-life-of-a-software-developer/</guid>
       <description>&lt;p&gt;TLDR: AI/ML will be just another tool in the toolbox for developers to use. It is not going to fundamentally change the craft of developing software.&lt;/p&gt;&#xA;&lt;p&gt;Maybe I’m a bit late to the party with this short piece, but there’s been a lot of buzz about how the latest AI (actually ML [Machine Learning]) tools are going to replace programmers. All the end user will have to do is type in a couple of lines in plain English describing his problem and viola! ChatGPT/Copilot or whatever else will vomit out code that can immediately be used. No pesky (and expensive!) coders to deal with; no ponderous requirement gathering, testing or any other of that SDLC malarkey. Just ask and you shall receive.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Arsalan Zaidi&#39;s Blog - azaidi.blogspot.com</title>
-      <link>https://bitfish.in/arsalan-zaidis-blog-azaidi.blogspot.com/</link>
+      <link>http://localhost:1313/arsalan-zaidis-blog-azaidi.blogspot.com/</link>
       <pubDate>Sun, 15 Jun 2008 12:00:00 +0000</pubDate>
-      <guid>https://bitfish.in/arsalan-zaidis-blog-azaidi.blogspot.com/</guid>
+      <guid>http://localhost:1313/arsalan-zaidis-blog-azaidi.blogspot.com/</guid>
       <description>&lt;p&gt;The first blog I ever set up was on blogspot.com. You can check out my ramblings there if you are extremely curious.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://azaidi.blogspot.com/&#34;&gt;↠ Arsalan Zaidi&amp;rsquo;s Blog ↞&lt;/a&gt;&lt;/p&gt;</description>
     </item>
   </channel>

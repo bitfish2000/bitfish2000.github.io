@@ -2,43 +2,49 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://bitfish.in/</loc>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2026-05-17T12:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/</loc>
+    <lastmod>2026-05-17T12:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/career/</loc>
+    <lastmod>2026-05-17T12:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/software-development/</loc>
+    <lastmod>2026-05-17T12:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/working-in-a-profit-centre-versus-a-cost-centre/</loc>
+    <lastmod>2026-05-17T12:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/off-the-shelf-software-versus-custom-built-applications/</loc>
     <lastmod>2026-01-18T12:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://bitfish.in/blog/</loc>
-    <lastmod>2026-01-18T12:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://bitfish.in/off-the-shelf-software-versus-custom-built-applications/</loc>
-    <lastmod>2026-01-18T12:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://bitfish.in/blog/software-development/</loc>
-    <lastmod>2026-01-18T12:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://bitfish.in/blog/build-in-public/</loc>
+    <loc>http://localhost:1313/blog/build-in-public/</loc>
     <lastmod>2026-01-04T10:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://bitfish.in/blog/home-lab/</loc>
+    <loc>http://localhost:1313/blog/home-lab/</loc>
     <lastmod>2026-01-04T10:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://bitfish.in/setting-up-a-static-website-with-hugo-and-github-pages/</loc>
+    <loc>http://localhost:1313/setting-up-a-static-website-with-hugo-and-github-pages/</loc>
     <lastmod>2026-01-04T10:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://bitfish.in/leaky-abstractions/</loc>
+    <loc>http://localhost:1313/leaky-abstractions/</loc>
     <lastmod>2023-08-18T12:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://bitfish.in/microservices-macro-headaches/</loc>
+    <loc>http://localhost:1313/microservices-macro-headaches/</loc>
     <lastmod>2023-08-11T12:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://bitfish.in/blog/ai/</loc>
+    <loc>http://localhost:1313/blog/ai/</loc>
     <lastmod>2023-08-08T12:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://bitfish.in/chatgpt-took-our-jerbs/</loc>
+    <loc>http://localhost:1313/chatgpt-took-our-jerbs/</loc>
     <lastmod>2023-08-08T12:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://bitfish.in/the-impact-of-ai-on-the-life-of-a-software-developer/</loc>
+    <loc>http://localhost:1313/the-impact-of-ai-on-the-life-of-a-software-developer/</loc>
     <lastmod>2023-08-07T12:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://bitfish.in/arsalan-zaidis-blog-azaidi.blogspot.com/</loc>
+    <loc>http://localhost:1313/arsalan-zaidis-blog-azaidi.blogspot.com/</loc>
     <lastmod>2008-06-15T12:00:00+00:00</lastmod>
   </url>
 </urlset>
