@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Career on Arsalan Zaidi&#39;s Blog</title>
-    <link>http://localhost:1313/blog/career/</link>
+    <link>https://bitfish.in/blog/career/</link>
     <description>Recent content in Career on Arsalan Zaidi&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en-US</language>
     <copyright>Copyright © 2026, Arsalan Zaid.</copyright>
     <lastBuildDate>Sun, 17 May 2026 12:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/blog/career/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://bitfish.in/blog/career/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Working in a Profit Centre versus a Cost Centre</title>
-      <link>http://localhost:1313/working-in-a-profit-centre-versus-a-cost-centre/</link>
+      <link>https://bitfish.in/working-in-a-profit-centre-versus-a-cost-centre/</link>
       <pubDate>Sun, 17 May 2026 12:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/working-in-a-profit-centre-versus-a-cost-centre/</guid>
+      <guid>https://bitfish.in/working-in-a-profit-centre-versus-a-cost-centre/</guid>
       <description>&lt;p&gt;&lt;em&gt;&lt;strong&gt;TL;DR:&lt;/strong&gt; Working in a cost centre like a GCC (Global Capability Centre) or corporate backoffice can be more relaxed but if you want to make an impact, then working where software development is at the front-line is where it&amp;rsquo;s at&lt;/em&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;As an IT professional, you need to ask yourself a very fundamental question. Do I want to be part of the profit engine of an organization and be involved with the team which is leading it forwards, or do I want to prioritize personal stability and resign myself to being considered just a necessary cost on the balance sheet?&lt;/p&gt;</description>
     </item>
   </channel>
