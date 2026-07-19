@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="https://bitfish.in/images/favicon.png" />
+<title>The state of small local LLMs for coding as of July 2026 | Arsalan Zaidi&#39;s Blog</title>
+<meta name="title" content="The state of small local LLMs for coding as of July 2026" />
+<meta name="description" content="TLDR: I spent a whole day playing around with small LLMs which run on my laptop. Here&rsquo;s what I figured out.
+
+I&rsquo;ve been reading a lot about people using small local LLMs to automate parts of their life, whether it&rsquo;s summarizing their emails in the morning or some sort of content creation. However, I&rsquo;m more interested in using them to write code and and so I downloaded a set of models for local LLM coding and I&rsquo;ve started systematically evaluating them. The test bed was a bog standard Lenovo Thinkpad T14s G2 with 32 GB of RAM and no dedicated GPU, running Linux. The model runner was Ollama, running them entirely on the CPU." />
+<meta name="keywords" content="ai,build in public,home lab,software development," />
+
+
+<meta property="og:url" content="https://bitfish.in/the-state-of-small-local-llms-for-coding-as-of-july-2026/">
+  <meta property="og:site_name" content="Arsalan Zaidi&#39;s Blog">
+  <meta property="og:title" content="The state of small local LLMs for coding as of July 2026">
+  <meta property="og:description" content="TLDR: I spent a whole day playing around with small LLMs which run on my laptop. Here’s what I figured out.
+I’ve been reading a lot about people using small local LLMs to automate parts of their life, whether it’s summarizing their emails in the morning or some sort of content creation. However, I’m more interested in using them to write code and and so I downloaded a set of models for local LLM coding and I’ve started systematically evaluating them. The test bed was a bog standard Lenovo Thinkpad T14s G2 with 32 GB of RAM and no dedicated GPU, running Linux. The model runner was Ollama, running them entirely on the CPU.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2026-07-19T00:00:00+05:30">
+    <meta property="article:modified_time" content="2026-07-19T00:00:00+05:30">
+    <meta property="article:tag" content="Ai">
+    <meta property="article:tag" content="Build in Public">
+    <meta property="article:tag" content="Home Lab">
+    <meta property="article:tag" content="Software Development">
+    <meta property="og:image" content="https://bitfish.in/images/share.png">
+
+
+
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://bitfish.in/images/share.png">
+  <meta name="twitter:title" content="The state of small local LLMs for coding as of July 2026">
+  <meta name="twitter:description" content="TLDR: I spent a whole day playing around with small LLMs which run on my laptop. Here’s what I figured out.
+I’ve been reading a lot about people using small local LLMs to automate parts of their life, whether it’s summarizing their emails in the morning or some sort of content creation. However, I’m more interested in using them to write code and and so I downloaded a set of models for local LLM coding and I’ve started systematically evaluating them. The test bed was a bog standard Lenovo Thinkpad T14s G2 with 32 GB of RAM and no dedicated GPU, running Linux. The model runner was Ollama, running them entirely on the CPU.">
+
+
+
+
+  <meta itemprop="name" content="The state of small local LLMs for coding as of July 2026">
+  <meta itemprop="description" content="TLDR: I spent a whole day playing around with small LLMs which run on my laptop. Here’s what I figured out.
+I’ve been reading a lot about people using small local LLMs to automate parts of their life, whether it’s summarizing their emails in the morning or some sort of content creation. However, I’m more interested in using them to write code and and so I downloaded a set of models for local LLM coding and I’ve started systematically evaluating them. The test bed was a bog standard Lenovo Thinkpad T14s G2 with 32 GB of RAM and no dedicated GPU, running Linux. The model runner was Ollama, running them entirely on the CPU.">
+  <meta itemprop="datePublished" content="2026-07-19T00:00:00+05:30">
+  <meta itemprop="dateModified" content="2026-07-19T00:00:00+05:30">
+  <meta itemprop="wordCount" content="896">
+  <meta itemprop="image" content="https://bitfish.in/images/share.png">
+  <meta itemprop="keywords" content="Ai,Build in Public,Home Lab,Software Development">
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  :root {
+    --width: 720px;
+    --font-main: Verdana, sans-serif;
+    --font-secondary: Verdana, sans-serif;
+    --font-scale: 1em;
+    --background-color: #fff;
+    --heading-color: #222;
+    --text-color: #444;
+    --link-color: #3273dc;
+    --visited-color: #8b6fcb;
+    --blockquote-color: #222;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background-color: #01242e;
+      --heading-color: #eee;
+      --text-color: #ddd;
+      --link-color: #8cc2dd;
+      --visited-color: #8b6fcb;
+      --blockquote-color: #ccc;
+    }
+  }
+
+  body {
+    font-family: var(--font-secondary);
+    font-size: var(--font-scale);
+    margin: auto;
+    padding: 20px;
+    max-width: var(--width);
+    text-align: left;
+    background-color: var(--background-color);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: var(--text-color);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-main);
+    color: var(--heading-color);
+  }
+
+  a {
+    color: var(--link-color);
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  nav a {
+    margin-right: 8px;
+  }
+
+  strong,
+  b {
+    color: var(--heading-color);
+  }
+
+  button {
+    margin: 0;
+    cursor: pointer;
+  }
+
+  time {
+    font-family: monospace;
+    font-style: normal;
+    font-size: 15px;
+  }
+
+  main {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  hr {
+    border: 0;
+    border-top: 1px dashed;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    font-family: monospace;
+    padding: 2px;
+    border-radius: 3px;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: var(--blockquote-color);
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding: 25px 0;
+    text-align: center;
+  }
+
+  .title:hover {
+    text-decoration: none;
+  }
+
+  .title h1 {
+    font-size: 1.5em;
+  }
+
+  .inline {
+    width: auto !important;
+  }
+
+  .highlight,
+  .code {
+    border-radius: 3px;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    overflow-x: auto;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  ul.blog-posts li {
+    display: flex;
+  }
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+  ul.blog-posts li a:visited {
+    color: var(--visited-color);
+  }
+
+</style>
+
+</head>
+
+<body>
+  <header><a href="/" class="title">
+  <h2>Arsalan Zaidi&#39;s Blog</h2>
+</a>
+<nav>
+<a href="/">Home</a>
+
+<a href="/blog/">Blog</a>
+
+<a href="/index.xml">🛜</a>
+
+</nav>
+</header>
+  <main>
+
+<h1>The state of small local LLMs for coding as of July 2026</h1>
+<p>
+  <i>
+    <time datetime='2026-07-19'>
+      19 Jul, 2026
+    </time>
+  </i>
+</p>
+
+<content>
+  <p><em><strong>TLDR:</strong> I spent a whole day playing around with small LLMs which run on my laptop. Here&rsquo;s what I figured out.</em></p>
+<hr>
+<p>I&rsquo;ve been reading a lot about people using small local LLMs to automate parts of their life, whether it&rsquo;s summarizing their emails in the morning or some sort of content creation. However, I&rsquo;m more interested in using them to write code and and so I downloaded a set of models for local LLM coding and I&rsquo;ve started systematically evaluating them. The test bed was a bog standard Lenovo Thinkpad T14s G2 with 32 GB of RAM and no dedicated GPU, running Linux. The model runner was Ollama, running them entirely on the CPU.</p>
+<h3 id="speed-test">Speed Test</h3>
+<p>For the speed test, I kept &rsquo;thinking&rsquo; off and the results are interesting. The absolute dark horse was qwen3-coder:30b. At an output rate of 12 tps it is fast! It compares in speed to qwen2.5-coder:3b, which is 10x smaller. I noticed that the output is more structured and terse than that of other models, but that is an advantage in a coding focused model IMO.</p>
+<p>Gemma4:e4b on the other hand was quite slow for its size and qwen3.5:27b was an absolute dog. It would only be worth running if the output is significantly better than that of qwen3-coder:30b.</p>
+<p>So as far as speed goes, we have a clear winner.</p>
+<h3 id="coding-test">Coding Test</h3>
+<p>Now to test these models as coding agents I had them vibe code a very simple console based program. I then ran the output and examined it for code quality. I deliberately kept the prompt simple and &lsquo;vibey&rsquo; to see how the model reacts and what assumptions it makes. Where available, I kept &rsquo;thinking&rsquo; mode ON this time to give the model the best chance to get things right, even though I don&rsquo;t think Chain of Thought (CoT) has much value.</p>
+<p>Overall, three things stood out to me:</p>
+<ol>
+<li>General models are not very good at coding at all. Both gemma4:e4b and qwen3.5:27b were unable to produce running code. This matches my previous experience working with such models.</li>
+<li>qwen2.5-coder:7b was better than it&rsquo;s 3b variant but the 14b variant was not significantly better, although it was slower. It&rsquo;s probable that for this family and other similar models, 7-9B params is the sweet spot.</li>
+<li>qwen3-coder:30b was the clear winner. It was blazing fast and the code was clean and works well. I&rsquo;ll be using this model on my personal machine for further work.</li>
+</ol>
+<p>You can see details in the section titled <a href="#coding-test-process">Coding Test Process</a></p>
+<h3 id="additional-observations">Additional observations</h3>
+<p>I initially ran the test using Pi.dev as my agent harness rather than raw Ollama, but quickly ran into two issues. One was that Pi only loads models with tool calling support, which Qwn2.5-Coder doesn&rsquo;t support, so I couldn&rsquo;t test those models. Force loading those showed me another potential issue; the model was trying to use the web-search tool to get the code for the tic-tac-toe program from the web! Not at all what we wanted. Using <code>ollama run</code> side-steps both issues, but it was interesting to see this none the less.</p>
+<h2 id="speed-testing-process">Speed testing process</h2>
+<p>Models run with:</p>
+<ul>
+<li><code>ollama run &lt;model&gt;</code></li>
+<li>/set verbose</li>
+<li>/set nothink</li>
+<li>Prompt: &ldquo;what are your capabilities?&rdquo;</li>
+</ul>
+<h3 id="raw-results-grouped-by-family">Raw results (grouped by family):</h3>
+<ul>
+<li>gemma4:e4b
+<ul>
+<li>prompt eval rate:     39.50 tokens/s</li>
+<li>eval rate:            8.50 tokens/s</li>
+</ul>
+</li>
+<li>qwen2.5-coder:3b
+<ul>
+<li>prompt eval rate:     83.78 tokens/s</li>
+<li>eval rate:            14.09 tokens/s</li>
+</ul>
+</li>
+<li>qwen2.5-coder:7b
+<ul>
+<li>prompt eval rate:     37.09 tokens/s</li>
+<li>eval rate:            6.74 tokens/s</li>
+</ul>
+</li>
+<li>qwen2.5-coder:14b
+<ul>
+<li>prompt eval rate:     18.38 tokens/s</li>
+<li>eval rate:            3.32 tokens/s</li>
+</ul>
+</li>
+<li>qwen3.5:27b
+<ul>
+<li>prompt eval rate:     7.11 tokens/s</li>
+<li>eval rate:            1.71 tokens/s</li>
+</ul>
+</li>
+<li>qwen3-coder:30b
+<ul>
+<li>prompt eval rate:     37.36 tokens/s</li>
+<li>eval rate:            12.37 tokens/s</li>
+</ul>
+</li>
+</ul>
+<h2 id="coding-test-process">Coding Test Process</h2>
+<p>Models run with:</p>
+<ul>
+<li><code>ollama run &lt;model&gt;</code></li>
+<li>/set verbose</li>
+<li>/set think #if the model supports &rsquo;thinking&rsquo;</li>
+<li>Prompt: &ldquo;Write a simple console based game of tic tac toe in python.&rdquo;</li>
+</ul>
+<h3 id="raw-results-grouped-by-family-1">Raw results (grouped by family):</h3>
+<ul>
+<li>gemma4:e4b
+<ul>
+<li>Generated code was 140 lines long. It errored out at launch and did not run. Overall: 0/10</li>
+<li>prompt eval rate:     48.71 tokens/s</li>
+<li>eval rate:            7.57 tokens/s</li>
+</ul>
+</li>
+<li>qwen2.5-coder:3b
+<ul>
+<li>Generated code was only 47 lines long. The display was slightly mis-alined but functional. The user has to specify the 0 indexed x,y co-ordinates to make his move. There was some error checking, but no proper boundary checks. Overall: 5/10</li>
+<li>prompt eval rate:     81.83 tokens/s</li>
+<li>eval rate:            12.66 tokens/s</li>
+</ul>
+</li>
+<li>qwen2.5-coder:7b
+<ul>
+<li>Generated code was 58 lines long. The model also gave a clear explanation of how to play the game along with some sample outputs. The game output also mentions the 0 indexing requirement when taking input. Overall a better effort. Overall: 6/10</li>
+<li>prompt eval rate:     17.08 tokens/s</li>
+<li>eval rate:            3.17 tokens/s</li>
+</ul>
+</li>
+<li>qwen2.5-coder:14b
+<ul>
+<li>Generated code was 60 lines long. The model output was quite terse, but the game had better input design, breaking up the users x and y positions into two distinct steps. The board display was still mis-aligned, but legible. Decent enough. Overall: 6/10</li>
+<li>prompt eval rate:     17.16 tokens/s</li>
+<li>eval rate:            3.27 tokens/s</li>
+</ul>
+</li>
+<li>qwen3.5:27b
+<ul>
+<li>Generated code was 78 lines long. It contained four syntax errors right off the bat and did not run. Overall: 0/10</li>
+<li>prompt eval rate:     1.64 tokens/s</li>
+<li>eval rate:            1.66 tokens/s</li>
+</ul>
+</li>
+<li>qwen3-coder:30b
+<ul>
+<li>Generated code was 89 lines long. No thinking mode and the token generation speed was impressive. The game also had a straight-forward interface and was the only one to display a well aligned board. Boundary checks were also present. Overall: 9/10</li>
+<li>prompt eval rate:     42.50 tokens/s</li>
+<li>eval rate:            10.37 tokens/s</li>
+</ul>
+</li>
+</ul>
+
+</content>
+
+
+
+<p>
+  
+  <a href="https://bitfish.in/blog/ai/">#Ai</a>
+  
+  <a href="https://bitfish.in/blog/build-in-public/">#Build in Public</a>
+  
+  <a href="https://bitfish.in/blog/home-lab/">#Home Lab</a>
+  
+  <a href="https://bitfish.in/blog/software-development/">#Software Development</a>
+  
+</p>
+
+  </main>
+  <footer>Made with <a href="https://github.com/janraasch/hugo-bearblog/">Hugo ʕ•ᴥ•ʔ Bear</a>
+</footer>
+
+  
+</body>
+
+</html>

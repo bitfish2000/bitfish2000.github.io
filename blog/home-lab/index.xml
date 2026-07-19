@@ -7,8 +7,15 @@
     <generator>Hugo</generator>
     <language>en-US</language>
     <copyright>Copyright © 2026, Arsalan Zaid.</copyright>
-    <lastBuildDate>Sun, 04 Jan 2026 10:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 19 Jul 2026 00:00:00 +0530</lastBuildDate>
     <atom:link href="https://bitfish.in/blog/home-lab/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The state of small local LLMs for coding as of July 2026</title>
+      <link>https://bitfish.in/the-state-of-small-local-llms-for-coding-as-of-july-2026/</link>
+      <pubDate>Sun, 19 Jul 2026 00:00:00 +0530</pubDate>
+      <guid>https://bitfish.in/the-state-of-small-local-llms-for-coding-as-of-july-2026/</guid>
+      <description>&lt;p&gt;&lt;em&gt;&lt;strong&gt;TLDR:&lt;/strong&gt; I spent a whole day playing around with small LLMs which run on my laptop. Here&amp;rsquo;s what I figured out.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;I&amp;rsquo;ve been reading a lot about people using small local LLMs to automate parts of their life, whether it&amp;rsquo;s summarizing their emails in the morning or some sort of content creation. However, I&amp;rsquo;m more interested in using them to write code and and so I downloaded a set of models for local LLM coding and I&amp;rsquo;ve started systematically evaluating them. The test bed was a bog standard Lenovo Thinkpad T14s G2 with 32 GB of RAM and no dedicated GPU, running Linux. The model runner was Ollama, running them entirely on the CPU.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Setting up a static website with Hugo and Github Pages</title>
       <link>https://bitfish.in/setting-up-a-static-website-with-hugo-and-github-pages/</link>
